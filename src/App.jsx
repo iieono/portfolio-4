@@ -117,6 +117,7 @@ function Loading() {
           </Link>
         )}
       </div>
+      <div class="absolute inset-0  h-full w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:8rem_4rem]"></div>
     </div>
   );
 }
