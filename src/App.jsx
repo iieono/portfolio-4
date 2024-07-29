@@ -101,8 +101,19 @@ function Loading() {
     animateText();
   }, []);
 
+  useEffect(() => {
+    function setVH() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }
+
+    setVH();
+    window.addEventListener("resize", setVH);
+    return () => window.removeEventListener("resize", setVH);
+  }, []);
+
   return (
-    <div className="h-screen w-screen bg-black flex gap-2 flex-col p-2 kode-mono text-white text-4xl">
+    <div className="min-h-screen h-[calc(var(--vh,1vh)*100)] pb-safe overflow-auto  bg-black flex gap-2 flex-col p-2 kode-mono text-white text-4xl">
       <div className="flex items-center gap-2">
         <div className="text-sm py-2">{breadText}</div>
         <img ref={breadRef} src="/ico.png" className="h-6 w-6" />
