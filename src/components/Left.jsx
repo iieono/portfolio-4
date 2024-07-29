@@ -68,7 +68,7 @@ function Left({ nav, toggleNav, setNav }) {
 
     // Animate each letter
     gsap.fromTo(
-      firstH1.children,
+      secondH1.children,
       { opacity: 0 },
       {
         opacity: 1,
@@ -87,13 +87,13 @@ function Left({ nav, toggleNav, setNav }) {
     );
 
     gsap.fromTo(
-      secondH1.children,
+      firstH1.children,
       { opacity: 0 },
       {
         opacity: 1,
         duration: 0.5,
         stagger: -0.1,
-        delay: 2, // delay to start after firstH1 animation
+        delay: 1, // delay to start after firstH1 animation
       }
     );
   });
@@ -109,6 +109,7 @@ function Left({ nav, toggleNav, setNav }) {
         <p className="overflow-visible select-none">iieo</p>
       </div>
       <div data-comp="her-0" className="component top nav-not justify-between">
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:8rem_4rem] [mask-image:radial-gradient(ellipse_100%_80%_at_0%_0%,#000_70%,transparent_110%)]"></div>
         <div></div>
         <div className="flex py-10 px-2 flex-col items-end  unbounded font-light">
           <h1 className="hero-1 text-[4.6rem]"> DIGITAL</h1>
@@ -145,7 +146,7 @@ function Left({ nav, toggleNav, setNav }) {
               location.pathname === "/" ? "active nav-item" : "nav-item"
             }`}
           >
-            {location.pathname != "/" ? "home" : "♦"}
+            {location.pathname != "/" ? "home" : "◆"}
           </Link>
           <Link
             to="/about"
@@ -153,7 +154,7 @@ function Left({ nav, toggleNav, setNav }) {
               location.pathname === "/about" ? "active nav-item" : "nav-item"
             }`}
           >
-            {location.pathname != "/about" ? "about" : "♦"}
+            {location.pathname != "/about" ? "about" : "◆"}
           </Link>
           <Link
             to="/portfolio"
@@ -163,7 +164,7 @@ function Left({ nav, toggleNav, setNav }) {
                 : "nav-item"
             }`}
           >
-            {location.pathname != "/portfolio" ? "portfolio" : "♦"}
+            {location.pathname != "/portfolio" ? "portfolio" : "◆"}
           </Link>
           <Link
             to="/contact"
@@ -171,7 +172,7 @@ function Left({ nav, toggleNav, setNav }) {
               location.pathname === "/contact" ? "active nav-item" : "nav-item"
             }`}
           >
-            {location.pathname != "/contact" ? "contact" : "♦"}
+            {location.pathname != "/contact" ? "contact" : "◆"}
           </Link>
           <div className=" lg:hidden z-10  bottom-7 lg:right-7 lg:bottom-10 w-full h-[2px] absolute bg-white "></div>
         </div>
