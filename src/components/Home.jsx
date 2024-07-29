@@ -188,6 +188,7 @@ function Home() {
         data-comp={`idk-${String(idkCounter).padStart(2, "0")}`}
         className="component top text-red-200"
       >
+        <div class=" lg:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:6rem_2.9rem] [mask-image:radial-gradient(ellipse_80%_70%_at_20%_0%,#000_70%,transparent_110%)]"></div>
         <div
           className="h-max absolute select-none"
           ref={textRef}
