@@ -13,6 +13,23 @@ import gsap from "gsap";
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const documentHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+    };
+
+    window.addEventListener("resize", documentHeight);
+
+    // Set initial height
+    documentHeight();
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", documentHeight);
+    };
+  }, []);
   useEffect(() => {
     if (location.pathname === "/") {
       const timer = setTimeout(() => {
@@ -46,8 +63,9 @@ function App() {
   }, [location.pathname]);
 
   if (loading && location.pathname === "/") return <Loading />;
+
   return (
-    <div className="app h-screen w-screen p-0 lg:p-[var(--gap-main)]">
+    <div className="app  p-0 lg:p-[var(--gap-main)]">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -113,7 +131,7 @@ function Loading() {
   }, []);
 
   return (
-    <div className="min-h-screen h-[calc(var(--vh,1vh)*100)] pb-safe overflow-auto  bg-black flex gap-2 flex-col p-2 kode-mono text-white text-4xl">
+    <div className="h-screen w-screen bg-black flex gap-2 flex-col p-2 kode-mono text-white text-4xl">
       <div className="flex items-center gap-2">
         <div className="text-sm py-2">{breadText}</div>
         <img ref={breadRef} src="/ico.png" className="h-6 w-6" />

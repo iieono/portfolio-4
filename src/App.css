@@ -26,6 +26,8 @@
   color: white;
 }
 :root {
+  --doc-height: 100%;
+
   --gap-main: 6px;
   --border-main: 0px;
   --padding-main: 2rem;
@@ -37,6 +39,8 @@
   --accent-shade: #cf0a0a;
 }
 .app {
+  height: var(--doc-height);
+
   background-color: var(--bg-main);
   transition: background-color 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
