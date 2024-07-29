@@ -204,9 +204,9 @@ function Home() {
           <p>iieo</p>
         </div>
         <div className=" h-6 lg:h-10 absolute w-full text-xl flex justify-end items-center bg-black left-0 bottom-8 text-end -z-20 "></div>
-        <div className="h-full w-min p-2 py-8 text-black text-6xl leading-tight lg:hidden">
+        <div className="unbounded h-full w-min p-2 py-8 text-black text-5xl font-light leading-tight lg:hidden">
           <p>DIGITAL ARCHITECT</p>
-          <div className="flex px-2 justify-between">
+          <div className="flex px-1 justify-between">
             <div className="text-sm w-1/4 flex items-center justify-center">
               <div className="w-full bg-black h-3"></div>
             </div>
@@ -221,14 +221,17 @@ function Home() {
         </div>
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component stuff">
-        <div ref={heroRef} className="flex gap-2 flex-col p-4  group">
+        <div
+          ref={heroRef}
+          className="flex gap-2 flex-col p-2  group unbounded font-light"
+        >
           <Link
             to="/portfolio"
-            className="border-b pb-4 border-black w-max text-4xl hover:border-white hover:text-white transition-all duration-150"
+            className="border-b pb-4 border-black w-max text-2xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
             See my works
           </Link>
-          <div className="flex gap-4 py-2 w-max text-xl">
+          <div className="flex gap-4 py-2 w-max text-base lg:text-xl">
             <Link
               to="/contact"
               className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
@@ -251,16 +254,16 @@ function Home() {
               e-mail
             </Link> */}
 
-            <p className="  group-hover:pl-2 transition-all duration-500">{`->`}</p>
+            <p className="  group-hover:pl-2 kode-mono transition-all duration-500">{`->`}</p>
           </div>
         </div>
-        <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div>
+        {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
         <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div>
-        <div className=" lg:flex z-20 right-5 bottom-5 lg:right-5 lg:bottom-8 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div>
-        <div className="z-20 right-10 bottom-1 lg:right-14 lg:bottom-10 h-5 absolute text-black text-xs px-2">
+        <div className=" lg:flex z-20 right-5 bottom-5 lg:right-5 lg:bottom-7 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div>
+        {/* <div className="z-20 right-10 bottom-1 lg:right-14 lg:bottom-10 h-5 absolute text-black text-xs px-2">
           {frameInfo.width} : {frameInfo.height} / {frameInfo.fps || 0} fps
-        </div>
-        <div className=" lg:flex z-10 right-5 bottom-7 lg:right-7 lg:bottom-10 w-full h-[2px] absolute bg-white "></div>
+        </div> */}
+        <div className=" lg:flex z-10 right-5 bottom-7 lg:right-7 lg:bottom-9 w-full h-[2px] absolute bg-white "></div>
       </div>
     </div>
   );

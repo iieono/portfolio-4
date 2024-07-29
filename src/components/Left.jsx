@@ -73,11 +73,12 @@ function Left({ nav, toggleNav, setNav }) {
       {
         opacity: 1,
         duration: 0.5,
-        stagger: 0.1,
+        stagger: -0.1,
         delay: 1,
+        x: 0,
         onComplete: () => {
           gsap.to(firstH1, {
-            fontSize: "6rem",
+            fontSize: "4.6rem",
             duration: 1,
             ease: "power1.in",
           });
@@ -91,7 +92,7 @@ function Left({ nav, toggleNav, setNav }) {
       {
         opacity: 1,
         duration: 0.5,
-        stagger: 0.1,
+        stagger: -0.1,
         delay: 2, // delay to start after firstH1 animation
       }
     );
@@ -109,12 +110,12 @@ function Left({ nav, toggleNav, setNav }) {
       </div>
       <div data-comp="her-0" className="component top nav-not justify-between">
         <div></div>
-        <div className="flex py-10 flex-col">
-          <h1 className="hero-1 text-[8rem]">DIGITAL</h1>
-          <h1 className="hero-1 text-[6rem]">ARCHITECT</h1>
-          <div className="h-10 absolute w-full text-xl flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
-            <p ref={lineRef} className="px-16">
-              crafting web experiences
+        <div className="flex py-10 px-2 flex-col items-end  unbounded font-light">
+          <h1 className="hero-1 text-[4.6rem]"> DIGITAL</h1>
+          <h1 className="hero-1 text-[4.6rem]">ARCHITECT</h1>
+          <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
+            <p ref={lineRef} className=" px-10 tracking-[2px]">
+              {/* crafting web experiences */}
             </p>
           </div>
         </div>
@@ -129,11 +130,11 @@ function Left({ nav, toggleNav, setNav }) {
         <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
         <div
           ref={bgNavRef}
-          className="hidden lg:flex absolute -bottom-32 tracking-wide text-white opacity-40 select-none lg:text-[20rem] leading-none"
+          className=" font-bold hidden lg:flex absolute -bottom-72 h-full w-full overflow-visible tracking-wider text-[var(--bg-main)] opacity-5 select-none lg:text-[20rem] leading-none"
         >
           {location.pathname.slice(1) || "home"}
         </div>
-        <div onClick={toggleNav} className="menu-btn lg:hidden absolute">
+        <div onClick={toggleNav} className="menu-btn  lg:hidden absolute">
           <SlArrowRight />
         </div>
 

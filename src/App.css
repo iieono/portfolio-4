@@ -1,6 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
 .kode-mono {
   font-family: "Kode Mono", monospace;
+}
+.oswald {
+  font-family: "Oswald", sans-serif;
+}
+.pacifico {
+  font-family: "Pacifico", cursive;
+}
+.eczar {
+  font-family: "Eczar", serif;
+}
+.unbounded {
+  font-family: "Unbounded", sans-serif;
 }
 
 * {
@@ -8,6 +23,7 @@
 }
 *::selection {
   background: var(--bg-main);
+  color: white;
 }
 :root {
   --gap-main: 6px;
@@ -86,7 +102,7 @@
   @apply absolute top-6 right-4 text-white text-lg kode-mono block;
 }
 .nav-container {
-  @apply text-[3.5rem] leading-none lg:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-0;
+  @apply text-[3.5rem] leading-none lg:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;
 }
 .nav-item {
   @apply flex w-min;
