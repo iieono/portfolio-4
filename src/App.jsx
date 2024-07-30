@@ -62,7 +62,7 @@ function App() {
     document.documentElement.style.setProperty("--bg-main", bgColor);
   }, [location.pathname]);
 
-  if (loading && location.pathname === "/") return <Loading />;
+  // if (loading && location.pathname === "/") return <Loading />;
 
   return (
     <div className="app  p-0 lg:p-[var(--gap-main)]">

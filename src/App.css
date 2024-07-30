@@ -103,7 +103,7 @@
   transition: background-color 1s ease;
 }
 .menu-btn {
-  @apply absolute top-6 right-4 text-white text-lg kode-mono block;
+  @apply absolute top-5 right-5 text-white text-lg kode-mono block;
 }
 .nav-container {
   @apply text-[3.5rem] leading-none lg:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;

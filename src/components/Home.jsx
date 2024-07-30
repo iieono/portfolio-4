@@ -11,6 +11,7 @@ function Home() {
   const nameRef = useRef(null);
   const heroRef = useRef(null);
   const infoRef = useRef(null);
+  const parRef = useRef(null);
   const stuffRef = useRef(null);
   const [idkCounter, setIdkCounter] = useState(0);
   const [frameInfo, setFrameInfo] = useState({ width: 0, height: 0, fps: 0 });
@@ -59,6 +60,18 @@ function Home() {
       duration: 1,
       delay: 0.5,
     });
+    gsap.fromTo(
+      parRef.current.querySelectorAll("span"),
+      { opacity: 0, y: -40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        stagger: 0.5,
+        ease: "power2.out",
+        delay: 2.5,
+      }
+    );
     if (window.innerWidth > 1024) {
       gsap.from(heroRef.current, {
         x: -50,
@@ -77,7 +90,7 @@ function Home() {
       duration: 0.05,
       yoyo: true,
       repeat: 7,
-      delay: 4,
+      delay: 10,
       onComplete: () => {
         gsap.to(glitchRef.current, {
           background: "#000000",
@@ -222,25 +235,46 @@ function Home() {
         </div>
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component stuff">
+        <div className="hidden lg:flex p-2 text-xl font-light w-2/3 unbounded tracking-none leading-widest">
+          <p ref={parRef} class="overflow-visible">
+            <span>
+              Hello there! I'm <br />
+            </span>
+            <span class="highlight leading-none text-5xl">
+              Abdusamadbek Akhmadjonov,
+            </span>
+            <span>
+              <br /> a creative
+            </span>
+            <span class="text-4xl leading-none px-2">web developer.</span>
+            <br />
+            <span>I merge creativity and technology to craft</span>
+            <span className="text-4xl leading-none px-2">
+              immersive digital solutions
+            </span>
+            {/* <br /> */}
+            <span className="">that inspire.</span>
+          </p>
+        </div>
         <div
           ref={heroRef}
-          className="flex gap-2 flex-col p-2  group unbounded font-light"
+          className="flex lg:hidden  gap-2 flex-col p-2  group unbounded font-light"
         >
           <Link
-            to="/portfolio"
-            className="border-b pb-4 border-black w-max text-2xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
+            to="/about"
+            className="border-b pb-2 border-black w-max text-2xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
-            See my works
+            More about
           </Link>
           <div className="flex gap-4 py-2 w-max text-base lg:text-xl">
-            <Link
+            {/* <Link
               to="/contact"
               className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
               rel="noopener noreferrer"
             >
               connect
-            </Link>
-            {/* <Link
+            </Link> */}
+            <Link
               to="https://github.com/iieono"
               className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
               target="_blank"
@@ -253,9 +287,17 @@ function Home() {
               className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
             >
               e-mail
-            </Link> */}
+            </Link>
+            <Link
+              to="mailto:axmadjonov.ti@gmail.com"
+              className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
+            >
+              cv
+            </Link>
+            <div className="absolute kode-mono text-white opacity-20 bottom-0 -left-[20%] sm:-left-[10%] text-[17rem] leading-none">{`->`}</div>
+            <div className="absolute kode-mono text-white opacity-20 top-0 -right-[20%] sm:-right-[10%] text-[17rem] leading-none">{`<-`}</div>
 
-            <p className="  group-hover:pl-2 kode-mono transition-all duration-500">{`->`}</p>
+            {/* <p className="  group-hover:pl-2 kode-mono transition-all duration-500">{`->`}</p> */}
           </div>
         </div>
         {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
