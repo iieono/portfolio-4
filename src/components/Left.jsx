@@ -158,7 +158,7 @@ function Left({ nav, toggleNav, setNav }) {
         <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
         <div
           ref={bgNavRef}
-          className=" font-bold hidden lg:flex absolute bottom-[-60%] h-full w-full overflow-visible tracking-wider text-[var(--bg-main)] opacity-5 select-none lg:text-[20rem] leading-none"
+          className=" font-bold hidden lg:inline-block absolute bottom-[-20%] overflow-visible tracking-none text-[var(--bg-main)] opacity-5 select-none lg:text-[20rem] leading-none"
         >
           {location.pathname.slice(1) || "home"}
         </div>
@@ -172,11 +172,11 @@ function Left({ nav, toggleNav, setNav }) {
         >
           <Link
             to="/portfolio"
-            className="border-b pb-4 border-black w-max text-2xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
+            className="border-b pb-4 border-black w-max text-xl lg:text-3xl 2xl:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
             See my works
           </Link>
-          <div className="flex gap-4 py-2 w-max text-base lg:text-xl">
+          <div className="flex gap-4 py-2 w-max text-base lg:text-base 2xl:text-xl">
             <p className="  group-hover:pr-4 kode-mono transition-all duration-500">{`->`}</p>
             {/* <Link
               to="/contact"

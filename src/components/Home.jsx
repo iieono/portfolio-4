@@ -235,21 +235,23 @@ function Home() {
         </div>
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component stuff">
-        <div className="hidden lg:flex p-2 text-xl font-light w-2/3 unbounded tracking-none leading-widest">
+        <div className="hidden lg:flex p-2 text-base font-light w-8/12 unbounded tracking-none leading-widest overflow-visible">
           <p ref={parRef} class="overflow-visible">
             <span>
               Hello there! I'm <br />
             </span>
-            <span class="highlight leading-none text-5xl">
+            <span class="highlight leading-none text-4xl 2xl:text-5xl">
               Abdusamadbek Akhmadjonov,
             </span>
             <span>
               <br /> a creative
             </span>
-            <span class="text-4xl leading-none px-2">web developer.</span>
+            <span class="text-3xl 2xl:text-4xl leading-none px-2">
+              web developer.
+            </span>
             <br />
             <span>I merge creativity and technology to craft</span>
-            <span className="text-4xl leading-none px-2">
+            <span className="text-3xl 2xl:text-4xl leading-none px-2">
               immersive digital solutions
             </span>
             {/* <br /> */}
@@ -262,7 +264,7 @@ function Home() {
         >
           <Link
             to="/about"
-            className="border-b pb-2 border-black w-max text-2xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
+            className="border-b pb-2 border-black w-max text-3xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
             More about
           </Link>

@@ -106,7 +106,7 @@
   @apply absolute top-5 right-5 text-white text-lg kode-mono block;
 }
 .nav-container {
-  @apply text-[3.5rem] leading-none lg:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;
+  @apply text-[3.5rem] leading-none lg:text-base 2xl:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;
 }
 .nav-item {
   @apply flex w-min;
