@@ -29,6 +29,7 @@
 * {
   overflow: hidden;
 }
+
 *::selection {
   background: var(--bg-main);
   color: white;
