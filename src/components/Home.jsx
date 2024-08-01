@@ -235,7 +235,7 @@ function Home() {
         </div>
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component stuff">
-        <div className="hidden lg:flex p-2 text-base font-light w-8/12 unbounded tracking-none leading-widest overflow-visible">
+        <div className="hidden lg:flex p-2 text-base font-light w-full xl:w-3/4 unbounded tracking-none leading-widest overflow-visible">
           <p ref={parRef} class="overflow-visible">
             <span>Hello there! </span>
             <span>I'm</span>
@@ -252,7 +252,7 @@ function Home() {
             <br />
             <span>Crafting</span>
             <span className="text-3xl 2xl:text-4xl leading-none px-2">
-              immersive digital <br /> solutions
+              immersive digital solutions
             </span>
             {/* <br /> */}
             <span className="">that inspire.</span>
