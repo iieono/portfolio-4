@@ -55,6 +55,7 @@ function Home() {
   useGSAP(() => {
     // Animation for rightRef remains outside the timeline
     gsap.set(rightRef.current, { y: "-100%" });
+    gsap.set(textRef.current, { y: "100%" });
     gsap.to(rightRef.current, {
       y: 0,
       ease: "power4.out",
@@ -93,114 +94,96 @@ function Home() {
     // Create a timeline for other animations
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
 
-    // Add animations to the timeline
-    tl.to(glitchRef.current, {
-      background: "#000",
-      duration: 0.05,
-      yoyo: true,
-      repeat: 7,
-      delay: 10,
-      onComplete: () => {
-        gsap.to(glitchRef.current, {
-          background: "#000000",
-          duration: 2,
-        });
-        if (glitchRef.current) {
-          glitchRef.current.setAttribute("data-comp", "err-410");
-        }
-      },
-    })
-      .to(
-        nameRef.current,
-        {
+    if (window.innerWidth > 1024) {
+      // Add animations to the timeline
+      tl.to(glitchRef.current, {
+        background: "#000",
+        duration: 0.05,
+        yoyo: true,
+        repeat: 7,
+        delay: 10,
+        onComplete: () => {
+          gsap.to(glitchRef.current, {
+            background: "#000000",
+            duration: 2,
+          });
+          if (glitchRef.current) {
+            glitchRef.current.setAttribute("data-comp", "err-410");
+          }
+        },
+      })
+        .to(
+          nameRef.current,
+          {
+            opacity: 0,
+            duration: 1,
+            ease: "power4.out",
+          },
+          "+=0.5"
+        )
+        .to(infoRef.current, {
           opacity: 0,
           duration: 1,
           ease: "power4.out",
-        },
-        "+=0.5"
-      )
-      .to(infoRef.current, {
-        opacity: 0,
-        duration: 1,
-        ease: "power4.out",
-      })
-      // .to(
-      //   stuffRef.current,
-      //   {
-      //     rotateX: 110,
-      //     duration: 1,
-      //     delay: 1,
-      //     ease: "Bounce.easeOut",
-      //   },
-      //   "-=0.5"
-      // )
-      .fromTo(
-        textRef.current,
-        {
-          y: "20%",
-        },
-        {
-          y: "-120%",
-          duration: 5,
-          ease: "linear",
-        },
-        "-=0.5"
-      )
-      .to(
-        glitchRef.current,
-        {
-          background: "#fecaca",
-          duration: 0.05,
-          yoyo: true,
-          repeat: 6,
-          delay: 1,
-          onComplete: () => {
-            gsap.to(glitchRef.current, {
-              background: "#fecaca",
-              duration: 1,
-            });
-            if (glitchRef.current) {
-              setIdkCounter((prevCounter) => {
-                const newCounter = prevCounter + 1;
-                glitchRef.current.setAttribute(
-                  "data-comp",
-                  `idk-${String(newCounter).padStart(2, "0")}`
-                );
-                return newCounter;
-              });
-            }
+        })
+        .fromTo(
+          textRef.current,
+          {
+            y: "20%",
           },
-        },
-        "-=0.5"
-      )
-      .to(
-        nameRef.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "power4.out",
-        },
-        "-=0.5"
-      )
-      .to(
-        infoRef.current,
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "power4.out",
-        },
-        "-=1"
-      );
-    // .to(
-    //   stuffRef.current,
-    //   {
-    //     rotateX: 0,
-    //     duration: 2,
-    //     delay: 0,
-    //     ease: "power4.inOut",
-    //   },
-    //   "-=0.5"
-    // );
+          {
+            y: "-120%",
+            duration: 5,
+            ease: "linear",
+          },
+          "-=0.5"
+        )
+        .to(
+          glitchRef.current,
+          {
+            background: "#fecaca",
+            duration: 0.05,
+            yoyo: true,
+            repeat: 6,
+            delay: 1,
+            onComplete: () => {
+              gsap.to(glitchRef.current, {
+                background: "#fecaca",
+                duration: 1,
+              });
+              if (glitchRef.current) {
+                setIdkCounter((prevCounter) => {
+                  const newCounter = prevCounter + 1;
+                  glitchRef.current.setAttribute(
+                    "data-comp",
+                    `idk-${String(newCounter).padStart(2, "0")}`
+                  );
+                  return newCounter;
+                });
+              }
+            },
+          },
+          "-=0.5"
+        )
+        .to(
+          nameRef.current,
+          {
+            opacity: 1,
+            duration: 1,
+            ease: "power4.out",
+          },
+          "-=0.5"
+        )
+        .to(
+          infoRef.current,
+          {
+            opacity: 1,
+            duration: 1,
+            ease: "power4.out",
+          },
+          "-=1"
+        );
+    }
   });
 
   return (
@@ -210,7 +193,7 @@ function Home() {
         data-comp={`idk-${String(idkCounter).padStart(2, "0")}`}
         className="component top text-red-200"
       >
-        <div class=" lg:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:6rem_2.9rem] [mask-image:radial-gradient(ellipse_80%_70%_at_20%_0%,#000_70%,transparent_110%)]"></div>
+        <div class=" lg:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_0%_0%,#000_70%,transparent_110%)]"></div>
         <div
           className="h-max absolute select-none"
           ref={textRef}
