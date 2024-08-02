@@ -181,7 +181,7 @@ function Left({ nav, toggleNav, setNav }) {
             See my works
           </Link>
           <div className="flex gap-4 py-2 w-max text-base lg:text-base 2xl:text-xl">
-            <p className="  group-hover:pr-12 kode-mono transition-all duration-500">{`->`}</p>
+            <p className=" pr-12 group-hover:pr-0 kode-mono transition-all duration-500">{`->`}</p>
             {/* <Link
               to="/contact"
               className="border-b border-black hover:border-white hover:text-white transition-all duration-150"

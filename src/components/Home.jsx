@@ -67,7 +67,7 @@ function Home() {
         opacity: 1,
         y: 0,
         duration: 2,
-        stagger: 0.5,
+        stagger: 0.3,
         ease: "power2.out",
         delay: 2,
       }
@@ -266,7 +266,7 @@ function Home() {
             to="/about"
             className="border-b pb-2 border-black w-max text-3xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
-            More about
+            About me
           </Link>
           <div className="flex gap-4 py-2 w-max text-base lg:text-xl">
             {/* <Link

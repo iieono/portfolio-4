@@ -668,7 +668,7 @@
   color: white;
 }
 .para span {
-  @apply duration-300;
+  @apply duration-300 cursor-default;
 }
 .para:hover span:not(.highlight) {
   color: white;
