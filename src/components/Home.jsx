@@ -69,7 +69,7 @@ function Home() {
         duration: 2,
         stagger: 0.5,
         ease: "power2.out",
-        delay: 2.5,
+        delay: 2,
       }
     );
     if (window.innerWidth > 1024) {
@@ -236,22 +236,22 @@ function Home() {
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component stuff">
         <div className="hidden lg:flex p-2 text-base font-light w-full xl:w-3/4 unbounded tracking-none leading-widest overflow-visible">
-          <p ref={parRef} class="overflow-visible">
+          <p ref={parRef} class="para overflow-visible">
             <span>Hello there! </span>
             <span>I'm</span>
             <br />
-            <span class="highlight leading-none text-4xl 2xl:text-5xl">
+            <span class="highlight leading-none text-4xl 2xl:text-5xl ">
               Abdusamadbek Akhmadjonov,
             </span>
             <span>
               <br /> a creative
             </span>
-            <span class="text-3xl 2xl:text-4xl leading-none px-2">
+            <span class="highlight text-3xl 2xl:text-4xl leading-none px-2 ">
               web developer.
             </span>
             <br />
             <span>Crafting</span>
-            <span className="text-3xl 2xl:text-4xl leading-none px-2">
+            <span className="highlight text-3xl 2xl:text-4xl leading-none px-2 ">
               immersive digital solutions
             </span>
             {/* <br /> */}

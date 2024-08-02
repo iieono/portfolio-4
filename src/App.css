@@ -664,3 +664,12 @@
     text-transform: none;
   }
 }
+.para:hover .highlight:not(:hover) {
+  color: white;
+}
+.para span {
+  @apply duration-300;
+}
+.para:hover span:not(.highlight) {
+  color: white;
+}
