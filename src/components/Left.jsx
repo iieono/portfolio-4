@@ -23,16 +23,16 @@ function Left({ nav, toggleNav, setNav }) {
   useGSAP(() => {
     const navItems = navContainerRef.current.querySelectorAll(".nav-item");
 
-    if (window.innerWidth > 1024) {
-      gsap.from(heroRef.current, {
-        y: -40,
-        // x: 20,
-        opacity: 0,
-        ease: "power4.out",
-        duration: 2,
-        delay: 2,
-      });
-    }
+    // if (window.innerWidth > 1024) {
+    //   gsap.from(heroRef.current, {
+    //     y: -40,
+    //     // x: 20,
+    //     opacity: 0,
+    //     ease: "power4.out",
+    //     duration: 2,
+    //     delay: 2,
+    //   });
+    // }
     gsap.from(gridRef.current, {
       opacity: 0,
       maskImage:
@@ -150,10 +150,11 @@ function Left({ nav, toggleNav, setNav }) {
       </div>
       <div
         data-comp="nav-16"
-        className="component nav flex flex-col justify-end lg:justify-between"
+        className="component group nav flex flex-col justify-end lg:justify-between"
       >
-        <div className="hidden lg:flex right-7 bottom-7 h-1/2 w-[2px] absolute bg-white "></div>
-        <div className="hidden lg:flex left-7 top-7 w-1/2 h-[2px] absolute bg-white "></div>
+        <div className="hidden lg:flex z-20 right-0 top-0 h-7 w-7 opacity-40 group-hover:opacity-0 duration-500 absolute bg-white"></div>
+        <div className="hidden lg:flex right-7 bottom-7 duration-1000 h-full group-hover:h-1/2 w-[2px] absolute bg-white "></div>
+        <div className="hidden lg:flex left-7 top-7 duration-1000 w-full group-hover:w-1/2 h-[2px] absolute bg-white "></div>
         <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
         <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
         <div
@@ -165,10 +166,13 @@ function Left({ nav, toggleNav, setNav }) {
         <div onClick={toggleNav} className="menu-btn  lg:hidden absolute">
           <SlArrowRight />
         </div>
+        {/* <div className="text-white duration-1000 unbounded text-6xl opacity-0 lg:opacity-30 group-hover:opacity-0 absolute top-10 right-10">
+          [ action ]
+        </div> */}
 
         <div
           ref={heroRef}
-          className="hidden lg:flex gap-2 flex-col p-2 items-end w-full  group unbounded font-light"
+          className="hidden lg:flex gap-2 flex-col p-2 items-end w-full opacity-0 duration-1000 group-hover:opacity-100 transition-all -translate-y-4 group-hover:translate-y-0  unbounded font-light"
         >
           <Link
             to="/portfolio"
@@ -177,7 +181,7 @@ function Left({ nav, toggleNav, setNav }) {
             See my works
           </Link>
           <div className="flex gap-4 py-2 w-max text-base lg:text-base 2xl:text-xl">
-            <p className="  group-hover:pr-4 kode-mono transition-all duration-500">{`->`}</p>
+            <p className="  group-hover:pr-12 kode-mono transition-all duration-500">{`->`}</p>
             {/* <Link
               to="/contact"
               className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
