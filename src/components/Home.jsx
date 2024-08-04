@@ -233,13 +233,14 @@ function Home() {
         <div className="hidden lg:flex px-2 py-6  text-4xl xl:text-5xl 2xl:text-6xl font-light w-full sacra  overflow-visible">
           <p ref={parRef} class="para overflow-visible z-40">
             <span>Hello there! </span>
-            <span>I'm a </span>
+            <br />
+            <span>I'm </span>
             {/* <br /> */}
             <span class="highlight  ">
-              web developer. <br />
+              Abdusamadbek Akhmadjonov. <br />
             </span>
             <span className="">Crafting immersive </span>
-            <span className="highlight  ">digital solutions.</span>
+            <span className="">digital solutions.</span>
             {/* <br /> */}
           </p>
         </div>
