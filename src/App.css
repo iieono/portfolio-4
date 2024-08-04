@@ -681,6 +681,9 @@
 .stuff:hover .highlight {
   color: white;
 }
+.highlight {
+  @apply text-white lg:text-black;
+}
 .para span {
   @apply duration-300 cursor-default;
 }

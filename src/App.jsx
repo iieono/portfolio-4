@@ -47,7 +47,7 @@ function App() {
     switch (location.pathname) {
       case "/":
         bgColor = "black";
-        strokeColor = "white";
+        strokeColor = "red";
         break;
       case "/portfolio":
         bgColor = "red";

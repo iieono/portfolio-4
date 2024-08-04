@@ -221,15 +221,15 @@ function Home() {
           <p>iieo</p>
         </div>
         {/* <div className=" h-6 lg:hidden absolute w-full text-xl flex justify-end items-center bg-black left-0 bottom-8 text-end -z-20 "></div> */}
-        <div className="unbounded h-full w-content flex flex-col justify-end p-2 py-8 text-black text-5xl font-light leading-tight lg:hidden">
+        <div className="unbounded h-full w-content flex flex-col justify-end p-2 py-4 text-black text-5xl font-light leading-tight lg:hidden">
           {/* <div
             ref={nameRef}
             className="lg:hidden text-sm  w-min h-5 bg-black text-white px-2 text-center items-center kode-mono"
           >
             <p>iieo</p>
           </div> */}
-          <p className="yatra">DIGITAL ARCHITECT</p>
-          <div className="flex px-1 justify-between">
+          <p className="">DIGITAL ARCHITECT</p>
+          {/* <div className="flex px-1 justify-between">
             <div className="text-sm w-1/4 flex items-center justify-center">
               <div className="w-full bg-black h-3"></div>
             </div>
@@ -240,7 +240,7 @@ function Home() {
             >
               <span>crafting web experiences</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component group stuff">
@@ -250,7 +250,7 @@ function Home() {
           ref={gridRef}
           class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className="hidden lg:flex   text-4xl xl:text-4xl 2xl:text-5xl font-light w-full caveat  overflow-visible">
+        <div className=" p-3 text-2xl xl:text-2xl 2xl:text-3xl font-light w-full caveat overflow-visible">
           <p ref={parRef} class="para overflow-visible z-40">
             <span>Hello there! </span>
             {/* <br /> */}
@@ -258,20 +258,24 @@ function Home() {
 
             <span className="highlight">
               <Link to="/about">
-                A. Akhmadjonov <br />
+                A. Akhmadjonov. <br />
               </Link>
             </span>
             <span className="">I craft immersive </span>
-            <span className="">digital solutions.</span>
-            <br />
+            <span className="">digital solutions that inspire. </span>
+            <br className="hidden lg:block" />
             <span className="highlight">
-              <Link to="/portfolio">See my works.</Link>
+              <Link to="/portfolio">See my works </Link>
+            </span>
+            <span>and </span>
+            <span className="highlight">
+              <Link to="/contact">reach out.</Link>
             </span>
           </p>
         </div>
         <div
           ref={heroRef}
-          className="flex lg:hidden  gap-2 flex-col p-2  group unbounded font-light"
+          className="flex hidden gap-2 flex-col p-2  group unbounded font-light"
         >
           <Link
             to="/portfolio"
@@ -307,12 +311,12 @@ function Home() {
             >
               cv
             </Link>
-            <div className="absolute kode-mono text-white opacity-20 bottom-0 -left-[20%] sm:-left-[10%] text-[17rem] leading-none">{`->`}</div>
-            <div className="absolute kode-mono text-white opacity-20 top-0 -right-[20%] sm:-right-[10%] text-[17rem] leading-none">{`<-`}</div>
 
             {/* <p className="  group-hover:pl-4 kode-mono transition-all duration-500">{`->`}</p> */}
           </div>
         </div>
+        <div className="absolute kode-mono text-white opacity-20 bottom-0 -left-[20%] sm:-left-[10%] text-[17rem] leading-none">{`->`}</div>
+        <div className="absolute kode-mono text-white opacity-20 top-0 -right-[20%] sm:-right-[10%] text-[17rem] leading-none">{`<-`}</div>
         {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
         {/* <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
         <div className=" lg:flex z-20 right-5 bottom-5 lg:right-5 lg:bottom-7 h-5 w-5 absolute bg-black "></div>

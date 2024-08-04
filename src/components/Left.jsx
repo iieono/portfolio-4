@@ -38,8 +38,8 @@ function Left({ nav, toggleNav, setNav }) {
         duration: 0.3,
         x: 0,
         color: "white",
-        textShadow:
-          "2px 0 0 var(--bg-main), 4px 0 0 var(--bg-main), 6px 0 0 var(--bg-main), 8px 0 0 var(--bg-main), 10px 0 0 var(--bg-main)",
+        // textShadow:
+        //   "2px 0 0 var(--bg-main), 4px 0 0 var(--bg-main), 6px 0 0 var(--bg-main), 8px 0 0 var(--bg-main), 10px 0 0 var(--bg-main)",
         filter: "blur(0px)",
         ease: "power1.inOut",
       });
@@ -59,8 +59,8 @@ function Left({ nav, toggleNav, setNav }) {
         duration: 0.3,
         x: 0,
         // color: "white",
-        textShadow:
-          "2px 0 0 var(--stroke-main), 4px 0 0 var(--stroke-main), 6px 0 0 var(--stroke-main), 8px 0 0 var(--stroke-main), 10px 0 0 var(--stroke-main)",
+        // textShadow:
+        //   "2px 0 0 var(--stroke-main), 4px 0 0 var(--stroke-main), 6px 0 0 var(--stroke-main), 8px 0 0 var(--stroke-main), 10px 0 0 var(--stroke-main)",
         filter: "blur(0px)",
         ease: "power1.inOut",
       });
@@ -166,13 +166,7 @@ function Left({ nav, toggleNav, setNav }) {
         delay: 1,
         filter: "blur(0px)",
         x: 0,
-        onComplete: () => {
-          gsap.to(firstH1, {
-            fontSize: "5.3rem",
-            duration: 1,
-            ease: "power1.in",
-          });
-        },
+        onComplete: () => {},
       }
     );
 
@@ -208,17 +202,11 @@ function Left({ nav, toggleNav, setNav }) {
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_80%_at_0%_0%,#000_70%,transparent_110%)]"
         ></div>
         <div></div>
-        <div className="flex  flex-col items-end uppercase pr-4 overflow-visible yatra heroo font-light">
-          <h1
-            ref={text1Ref}
-            className="hero-1 stroke-pic text-[5.3rem] overflow-visible"
-          >
+        <div className="flex  flex-col items-end uppercase pr-4  overflow-visible unbounded heroo  font-light">
+          <h1 ref={text1Ref} className="hero-1 text-[4.6rem]  overflow-visible">
             DIGITAL
           </h1>
-          <h1
-            ref={text2Ref}
-            className="hero-1 stroke-pic text-[5.5rem] overflow-visible"
-          >
+          <h1 ref={text2Ref} className="hero-1 text-[4.6rem]  overflow-visible">
             ARCHITECT
           </h1>
           {/* <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
@@ -254,42 +242,7 @@ function Left({ nav, toggleNav, setNav }) {
           // ref={heroRef}
           className="hidden lg:flex gap-2 flex-col p-2 items-end w-full opacity-0 duration-1000 group-hover:opacity-100 transition-all -translate-y-4 blur-xl group-hover:blur-0 group-hover:translate-y-0  unbounded font-light"
         >
-          {/* <Link
-            to="/portfolio"
-            className="border-b pb-4 border-black w-max text-xl lg:text-3xl 2xl:text-4xl hover:border-white hover:text-white transition-all duration-150"
-          >
-            See my works
-          </Link> */}
-          <div className="flex gap-4 py-2 w-max text-base lg:text-base 2xl:text-xl">
-            <p className=" pr-12 group-hover:pr-0 kode-mono transition-all duration-500">{`->`}</p>
-            {/* <Link
-              to="/contact"
-              className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
-              rel="noopener noreferrer"
-            >
-              connect
-            </Link> */}
-            <Link
-              to="mailto:axmadjonov.ti@gmail.com"
-              className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
-            >
-              cv
-            </Link>
-            <Link
-              to="https://github.com/iieono"
-              className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github
-            </Link>
-            <Link
-              to="mailto:axmadjonov.ti@gmail.com"
-              className="border-b border-black hover:border-white hover:text-white transition-all duration-150"
-            >
-              e-mail
-            </Link>
-          </div>
+          Hello
         </div>
 
         <div className="nav-container" ref={navContainerRef}>
