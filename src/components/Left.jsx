@@ -38,6 +38,8 @@ function Left({ nav, toggleNav, setNav }) {
         duration: 0.3,
         x: 0,
         color: "white",
+        textShadow:
+          "2px 0 0 var(--bg-main), 4px 0 0 var(--bg-main), 6px 0 0 var(--bg-main), 8px 0 0 var(--bg-main), 10px 0 0 var(--bg-main)",
         filter: "blur(0px)",
         ease: "power1.inOut",
       });
@@ -56,6 +58,9 @@ function Left({ nav, toggleNav, setNav }) {
       .to(text2Ref.current, {
         duration: 0.3,
         x: 0,
+        // color: "white",
+        textShadow:
+          "2px 0 0 var(--stroke-main), 4px 0 0 var(--stroke-main), 6px 0 0 var(--stroke-main), 8px 0 0 var(--stroke-main), 10px 0 0 var(--stroke-main)",
         filter: "blur(0px)",
         ease: "power1.inOut",
       });
@@ -203,11 +208,17 @@ function Left({ nav, toggleNav, setNav }) {
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_80%_at_0%_0%,#000_70%,transparent_110%)]"
         ></div>
         <div></div>
-        <div className="flex  flex-col items-end uppercase yatra heroo font-light">
-          <h1 ref={text1Ref} className="hero-1 text-[5.3rem]">
+        <div className="flex  flex-col items-end uppercase pr-4 overflow-visible yatra heroo font-light">
+          <h1
+            ref={text1Ref}
+            className="hero-1 stroke-pic text-[5.3rem] overflow-visible"
+          >
             DIGITAL
           </h1>
-          <h1 ref={text2Ref} className="hero-1 text-[5.5rem]">
+          <h1
+            ref={text2Ref}
+            className="hero-1 stroke-pic text-[5.5rem] overflow-visible"
+          >
             ARCHITECT
           </h1>
           {/* <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
@@ -240,7 +251,7 @@ function Left({ nav, toggleNav, setNav }) {
         </div> */}
 
         <div
-          ref={heroRef}
+          // ref={heroRef}
           className="hidden lg:flex gap-2 flex-col p-2 items-end w-full opacity-0 duration-1000 group-hover:opacity-100 transition-all -translate-y-4 blur-xl group-hover:blur-0 group-hover:translate-y-0  unbounded font-light"
         >
           {/* <Link

@@ -43,23 +43,30 @@ function App() {
 
   useEffect(() => {
     let bgColor;
+    let strokeColor;
     switch (location.pathname) {
       case "/":
         bgColor = "black";
+        strokeColor = "white";
         break;
       case "/portfolio":
         bgColor = "red";
+        strokeColor = "red";
         break;
       case "/about":
         bgColor = "blue";
+        strokeColor = "blue";
         break;
       case "/contact":
         bgColor = "#399918";
+        strokeColor = "#399918";
         break;
       default:
         bgColor = "black";
+        strokeColor = "white";
     }
     document.documentElement.style.setProperty("--bg-main", bgColor);
+    document.documentElement.style.setProperty("--stroke-main", strokeColor);
   }, [location.pathname]);
 
   // if (loading && location.pathname === "/") return <Loading />;

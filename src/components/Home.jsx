@@ -265,7 +265,7 @@ function Home() {
             <span className="">digital solutions.</span>
             <br />
             <span className="highlight">
-              <Link to="/portfolio">- See my works -</Link>
+              <Link to="/portfolio">See my works.</Link>
             </span>
           </p>
         </div>
