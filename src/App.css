@@ -680,6 +680,7 @@
 }
 .stuff:hover .highlight {
   color: white;
+  font-weight: bold;
 }
 .para span {
   @apply duration-300 cursor-default;
