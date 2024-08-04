@@ -64,10 +64,9 @@ function Home() {
     });
     gsap.fromTo(
       parRef.current.querySelectorAll("span"),
-      { opacity: 0, y: -40 },
+      { opacity: 0 },
       {
         opacity: 1,
-        y: 0,
         duration: 2,
         stagger: 0.3,
         ease: "power2.out",
@@ -231,27 +230,17 @@ function Home() {
           ref={gridRef}
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className="hidden lg:flex p-2 text-base font-light w-full xl:w-3/4 unbounded tracking-none leading-widest overflow-visible">
+        <div className="hidden lg:flex p-2 text-4xl 2xl:text-5xl font-light w-full xl:w-3/4 sacra  overflow-visible">
           <p ref={parRef} class="para overflow-visible z-40">
             <span>Hello there! </span>
             <span>I'm</span>
             <br />
-            <span class="highlight leading-none text-4xl 2xl:text-5xl ">
-              Abdusamadbek Akhmadjonov,
+            <span class="highlight  ">
+              Abdusamadbek Akhmadjonov. <br />
             </span>
-            <span>
-              <br /> a creative
-            </span>
-            <span class="highlight text-3xl 2xl:text-4xl leading-none px-2 ">
-              web developer.
-            </span>
-            <br />
-            <span>Crafting</span>
-            <span className="highlight text-3xl 2xl:text-4xl leading-none px-2 ">
-              immersive digital solutions
-            </span>
+            <span className="">Crafting immersive </span>
+            <span className="highlight  ">digital solutions.</span>
             {/* <br /> */}
-            <span className="">that inspire.</span>
           </p>
         </div>
         <div

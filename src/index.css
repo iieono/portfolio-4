@@ -7,3 +7,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Safiro";
+  src: local("Safiro"), url("./fonts/safiro-medium.otf") format("opentype");
+  font-weight: normal;
+}
