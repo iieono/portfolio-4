@@ -230,13 +230,13 @@ function Home() {
           ref={gridRef}
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className="hidden lg:flex p-2 text-4xl 2xl:text-5xl font-light w-full xl:w-3/4 sacra  overflow-visible">
+        <div className="hidden lg:flex px-2 py-6  text-4xl xl:text-5xl 2xl:text-6xl font-light w-full sacra  overflow-visible">
           <p ref={parRef} class="para overflow-visible z-40">
             <span>Hello there! </span>
-            <span>I'm</span>
-            <br />
+            <span>I'm a </span>
+            {/* <br /> */}
             <span class="highlight  ">
-              Abdusamadbek Akhmadjonov. <br />
+              web developer. <br />
             </span>
             <span className="">Crafting immersive </span>
             <span className="highlight  ">digital solutions.</span>
