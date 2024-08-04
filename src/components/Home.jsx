@@ -250,17 +250,23 @@ function Home() {
           ref={gridRef}
           class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className="hidden lg:flex   text-4xl xl:text-5xl 2xl:text-6xl font-light w-full caveat  overflow-visible">
+        <div className="hidden lg:flex   text-4xl xl:text-4xl 2xl:text-5xl font-light w-full caveat  overflow-visible">
           <p ref={parRef} class="para overflow-visible z-40">
             <span>Hello there! </span>
-            <br />
+            {/* <br /> */}
             <span>I'm </span>
 
-            <span class="highlight  ">
-              Abdusamadbek Akhmadjonov. <br />
+            <span className="highlight">
+              <Link to="/about">
+                A. Akhmadjonov <br />
+              </Link>
             </span>
-            <span className="">Crafting immersive </span>
+            <span className="">I craft immersive </span>
             <span className="">digital solutions.</span>
+            <br />
+            <span className="highlight">
+              <Link to="/portfolio">- See my works -</Link>
+            </span>
           </p>
         </div>
         <div
@@ -268,10 +274,10 @@ function Home() {
           className="flex lg:hidden  gap-2 flex-col p-2  group unbounded font-light"
         >
           <Link
-            to="/about"
-            className="border-b pb-2 border-black w-max text-3xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
+            to="/portfolio"
+            className="border-b pb-2 border-black w-max text-2xl lg:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
-            About me
+            See my works
           </Link>
           <div className="flex gap-4 py-2 w-max text-base lg:text-xl">
             {/* <Link
@@ -304,7 +310,7 @@ function Home() {
             <div className="absolute kode-mono text-white opacity-20 bottom-0 -left-[20%] sm:-left-[10%] text-[17rem] leading-none">{`->`}</div>
             <div className="absolute kode-mono text-white opacity-20 top-0 -right-[20%] sm:-right-[10%] text-[17rem] leading-none">{`<-`}</div>
 
-            {/* <p className="  group-hover:pl-2 kode-mono transition-all duration-500">{`->`}</p> */}
+            {/* <p className="  group-hover:pl-4 kode-mono transition-all duration-500">{`->`}</p> */}
           </div>
         </div>
         {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}

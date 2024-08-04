@@ -243,12 +243,12 @@ function Left({ nav, toggleNav, setNav }) {
           ref={heroRef}
           className="hidden lg:flex gap-2 flex-col p-2 items-end w-full opacity-0 duration-1000 group-hover:opacity-100 transition-all -translate-y-4 blur-xl group-hover:blur-0 group-hover:translate-y-0  unbounded font-light"
         >
-          <Link
+          {/* <Link
             to="/portfolio"
             className="border-b pb-4 border-black w-max text-xl lg:text-3xl 2xl:text-4xl hover:border-white hover:text-white transition-all duration-150"
           >
             See my works
-          </Link>
+          </Link> */}
           <div className="flex gap-4 py-2 w-max text-base lg:text-base 2xl:text-xl">
             <p className=" pr-12 group-hover:pr-0 kode-mono transition-all duration-500">{`->`}</p>
             {/* <Link
