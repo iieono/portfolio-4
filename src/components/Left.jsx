@@ -15,10 +15,70 @@ function Left({ nav, toggleNav, setNav }) {
   const heroRef = useRef(null);
   const gridRef = useRef(null);
   const location = useLocation(); // Get the current location
+  const text1Ref = useRef(null);
+  const text2Ref = useRef(null);
 
   useEffect(() => {
     setNav(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const tlText1 = gsap.timeline({ paused: true });
+    tlText1
+      .to(text1Ref.current, {
+        duration: 0.3,
+        x: -10,
+        filter: "blur(4px)",
+        ease: "power1.inOut",
+      }) // Slight move animation
+      .call(() => {
+        text1Ref.current.innerHTML = "& Designer";
+      })
+      .to(text1Ref.current, {
+        duration: 0.3,
+        x: 0,
+        color: "white",
+        filter: "blur(0px)",
+        ease: "power1.inOut",
+      });
+
+    const tlText2 = gsap.timeline({ paused: true });
+    tlText2
+      .to(text2Ref.current, {
+        duration: 0.3,
+        x: -10,
+        filter: "blur(4px)",
+        ease: "power1.inOut",
+      }) // Slight move animation
+      .call(() => {
+        text2Ref.current.innerHTML = "Developer";
+      })
+      .to(text2Ref.current, {
+        duration: 0.3,
+        x: 0,
+        filter: "blur(0px)",
+        ease: "power1.inOut",
+      });
+
+    const handleMouseEnterText1 = () => {
+      tlText1.play();
+    };
+
+    const handleMouseEnterText2 = () => {
+      tlText2.play();
+    };
+
+    const text1 = text1Ref.current;
+    const text2 = text2Ref.current;
+
+    text1.addEventListener("mouseenter", handleMouseEnterText1);
+    text2.addEventListener("mouseenter", handleMouseEnterText2);
+
+    return () => {
+      text1.removeEventListener("mouseenter", handleMouseEnterText1);
+      text2.removeEventListener("mouseenter", handleMouseEnterText2);
+    };
+  }, []);
 
   useGSAP(() => {
     const navItems = navContainerRef.current.querySelectorAll(".nav-item");
@@ -93,16 +153,17 @@ function Left({ nav, toggleNav, setNav }) {
     // Animate each letter
     gsap.fromTo(
       secondH1.children,
-      { opacity: 0 },
+      { opacity: 0, filter: "blur(20px)" },
       {
         opacity: 1,
         duration: 0.5,
         stagger: -0.1,
         delay: 1,
+        filter: "blur(0px)",
         x: 0,
         onComplete: () => {
           gsap.to(firstH1, {
-            fontSize: "4.6rem",
+            fontSize: "5.3rem",
             duration: 1,
             ease: "power1.in",
           });
@@ -112,9 +173,10 @@ function Left({ nav, toggleNav, setNav }) {
 
     gsap.fromTo(
       firstH1.children,
-      { opacity: 0 },
+      { opacity: 0, filter: "blur(20px)" },
       {
         opacity: 1,
+        filter: "blur(0px)",
         duration: 0.5,
         stagger: -0.1,
         delay: 1, // delay to start after firstH1 animation
@@ -127,25 +189,32 @@ function Left({ nav, toggleNav, setNav }) {
       ref={leftRef}
       className={`left ${nav ? "active" : ""} divide h-full w-full`}
     >
-      <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black"></div>
-      <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
+      <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute   bg-black"></div>
+
+      {/* <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black   shadow-lg shadow-black"></div> */}
       <div className="hidden experiment-title lg:flex z-20 left-5 top-5 h-5 absolute bg-black text-white px-2 text-center items-center kode-mono shadow-lg shadow-black">
         <p className="overflow-visible select-none">iieo</p>
       </div>
       <div data-comp="her-0" className="component top nav-not justify-between">
+        <div className="hidden lg:flex right-7 bottom-0 duration-1000 h-7 w-[1px] absolute bg-white z-20 "></div>
+        <div className="hidden lg:flex right-0 bottom-7 duration-1000 w-7 h-[1px] absolute bg-white z-20 "></div>
         <div
           ref={gridRef}
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_80%_at_0%_0%,#000_70%,transparent_110%)]"
         ></div>
         <div></div>
-        <div className="flex py-10 px-2 flex-col items-end  unbounded font-light">
-          <h1 className="hero-1 text-[4.6rem]"> DIGITAL</h1>
-          <h1 className="hero-1 text-[4.6rem]">ARCHITECT</h1>
-          <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
+        <div className="flex  flex-col items-end uppercase yatra heroo font-light">
+          <h1 ref={text1Ref} className="hero-1 text-[5.3rem]">
+            DIGITAL
+          </h1>
+          <h1 ref={text2Ref} className="hero-1 text-[5.5rem]">
+            ARCHITECT
+          </h1>
+          {/* <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
             <p ref={lineRef} className=" px-10 tracking-[2px]">
-              {/* crafting web experiences */}
+              crafting web experiences
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       <div
@@ -153,10 +222,10 @@ function Left({ nav, toggleNav, setNav }) {
         className="component group nav flex flex-col justify-end lg:justify-between"
       >
         <div className="hidden lg:flex z-20 right-0 top-0 h-7 w-7 opacity-40 group-hover:opacity-0 duration-500 absolute bg-white"></div>
-        <div className="hidden lg:flex right-7 bottom-7 duration-1000 h-full group-hover:h-1/2 w-[2px] absolute bg-white "></div>
-        <div className="hidden lg:flex left-7 top-7 duration-1000 w-full group-hover:w-1/2 h-[2px] absolute bg-white "></div>
-        <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
-        <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black shadow-lg shadow-black"></div>
+        <div className="hidden lg:flex right-7 bottom-0 duration-1000 h-full group-hover:h-1/2 w-[1px] absolute bg-white "></div>
+        <div className="hidden lg:flex left-0 top-7 duration-1000 w-full group-hover:w-1/2 h-[1px] absolute bg-white "></div>
+        {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black "></div>
+        <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black "></div> */}
         <div
           ref={bgNavRef}
           className=" font-bold hidden lg:inline-block absolute bottom-[-20%] overflow-visible tracking-none text-[var(--bg-main)] opacity-5 select-none lg:text-[20rem] leading-none"
@@ -172,7 +241,7 @@ function Left({ nav, toggleNav, setNav }) {
 
         <div
           ref={heroRef}
-          className="hidden lg:flex gap-2 flex-col p-2 items-end w-full opacity-0 duration-1000 group-hover:opacity-100 transition-all -translate-y-4 group-hover:translate-y-0  unbounded font-light"
+          className="hidden lg:flex gap-2 flex-col p-2 items-end w-full opacity-0 duration-1000 group-hover:opacity-100 transition-all -translate-y-4 blur-xl group-hover:blur-0 group-hover:translate-y-0  unbounded font-light"
         >
           <Link
             to="/portfolio"
@@ -247,7 +316,7 @@ function Left({ nav, toggleNav, setNav }) {
           >
             {location.pathname != "/contact" ? "contact" : "◆"}
           </Link>
-          <div className=" lg:hidden z-10  bottom-7 lg:right-7 lg:bottom-10 w-full h-[2px] absolute bg-white "></div>
+          <div className=" lg:hidden z-10  bottom-7 lg:right-7 lg:bottom-10 w-full h-[1px] absolute bg-white "></div>
         </div>
       </div>
     </div>

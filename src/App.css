@@ -5,8 +5,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
 .yatra {
   font-family: "Yatra One", system-ui;
+}
+.caveat {
+  font-family: "Caveat", cursive;
 }
 .sacra {
   font-family: "Sacramento", cursive;
@@ -44,7 +48,7 @@
 :root {
   --doc-height: 100%;
 
-  --gap-main: 6px;
+  --gap-main: 2px;
   --border-main: 0px;
   --padding-main: 2rem;
 
@@ -75,7 +79,7 @@
   transition: width 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 .divide {
-  @apply gap-1 lg:gap-[var(--gap-main)];
+  @apply gap-[var(--gap-main)];
 }
 .divide.left {
   @apply flex-col w-0 lg:w-full;
@@ -124,8 +128,11 @@
 .nav-container {
   @apply text-[3.5rem] leading-none lg:text-base 2xl:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;
 }
+.nav-container:hover .nav-item:not(:hover) {
+  filter: blur(2px);
+}
 .nav-item {
-  @apply flex w-min;
+  @apply flex w-min duration-300;
 }
 .nav-item:hover {
   @apply text-white bg-[var(--bg-main)];
@@ -671,12 +678,13 @@
     text-transform: none;
   }
 }
-.stuff:hover .highlight:not(:hover) {
-  color: black;
+.stuff:hover .highlight {
+  color: white;
 }
 .para span {
   @apply duration-300 cursor-default;
 }
 .stuff:hover span:not(.highlight) {
-  color: white;
+  /* color: white; */
+  filter: blur(2px);
 }

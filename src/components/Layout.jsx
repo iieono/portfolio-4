@@ -17,10 +17,7 @@ function Layout() {
       <Left nav={nav} toggleNav={toggleNav} setNav={setNav} />
       <Outlet />
       {!nav && (
-        <div
-          onClick={toggleNav}
-          className="menu-btn lg:hidden text-white border-b border-black pb-2"
-        >
+        <div onClick={toggleNav} className="menu-btn lg:hidden text-black pb-2">
           <SlArrowLeft />
         </div>
       )}

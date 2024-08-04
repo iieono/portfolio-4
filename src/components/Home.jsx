@@ -111,6 +111,11 @@ function Home() {
           }
         },
       })
+        .to(".lines-bg", {
+          opacity: 0,
+          duration: 0.3,
+          ease: "power4.out",
+        })
         .to(
           nameRef.current,
           {
@@ -164,6 +169,11 @@ function Home() {
           },
           "-=0.5"
         )
+        .to(".lines-bg", {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power4.out",
+        })
         .to(
           nameRef.current,
           {
@@ -192,6 +202,8 @@ function Home() {
         data-comp={`idk-${String(idkCounter).padStart(2, "0")}`}
         className="component top text-red-200"
       >
+        <div className=" lines-bg hidden lg:flex left-7 top-0 duration-1000 h-full group-hover:h-1/2 w-[1px] absolute bg-white "></div>
+        <div className=" lines-bg hidden lg:flex right-0 bottom-7 duration-1000 w-full group-hover:w-1/2 h-[1px] absolute bg-white "></div>
         <div class=" lg:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_5rem] [mask-image:radial-gradient(ellipse_100%_100%_at_0%_0%,#000_70%,transparent_110%)]"></div>
         <div
           className="h-max absolute select-none"
@@ -208,9 +220,15 @@ function Home() {
         >
           <p>iieo</p>
         </div>
-        <div className=" h-6 lg:h-10 absolute w-full text-xl flex justify-end items-center bg-black left-0 bottom-8 text-end -z-20 "></div>
-        <div className="unbounded h-full w-min p-2 py-8 text-black text-5xl font-light leading-tight lg:hidden">
-          <p>DIGITAL ARCHITECT</p>
+        {/* <div className=" h-6 lg:hidden absolute w-full text-xl flex justify-end items-center bg-black left-0 bottom-8 text-end -z-20 "></div> */}
+        <div className="unbounded h-full w-content flex flex-col justify-end p-2 py-8 text-black text-5xl font-light leading-tight lg:hidden">
+          {/* <div
+            ref={nameRef}
+            className="lg:hidden text-sm  w-min h-5 bg-black text-white px-2 text-center items-center kode-mono"
+          >
+            <p>iieo</p>
+          </div> */}
+          <p className="yatra">DIGITAL ARCHITECT</p>
           <div className="flex px-1 justify-between">
             <div className="text-sm w-1/4 flex items-center justify-center">
               <div className="w-full bg-black h-3"></div>
@@ -225,23 +243,24 @@ function Home() {
           </div>
         </div>
       </div>
-      <div ref={stuffRef} data-comp="her-3" className="component stuff">
+      <div ref={stuffRef} data-comp="her-3" className="component group stuff">
+        <div className="hidden lg:flex left-7 top-0 duration-1000 h-7 w-[1px]  absolute bg-white "></div>
+        <div className="hidden lg:flex left-0 top-7 duration-1000 w-7 h-[1px]  absolute bg-white "></div>
         <div
           ref={gridRef}
-          class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
+          class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className="hidden lg:flex px-2 py-6  text-4xl xl:text-5xl 2xl:text-6xl font-light w-full sacra  overflow-visible">
+        <div className="hidden lg:flex   text-4xl xl:text-5xl 2xl:text-6xl font-light w-full caveat  overflow-visible">
           <p ref={parRef} class="para overflow-visible z-40">
             <span>Hello there! </span>
             <br />
             <span>I'm </span>
-            {/* <br /> */}
+
             <span class="highlight  ">
               Abdusamadbek Akhmadjonov. <br />
             </span>
             <span className="">Crafting immersive </span>
             <span className="">digital solutions.</span>
-            {/* <br /> */}
           </p>
         </div>
         <div
@@ -289,12 +308,12 @@ function Home() {
           </div>
         </div>
         {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
-        <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div>
-        <div className=" lg:flex z-20 right-5 bottom-5 lg:right-5 lg:bottom-7 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div>
+        {/* <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
+        <div className=" lg:flex z-20 right-5 bottom-5 lg:right-5 lg:bottom-7 h-5 w-5 absolute bg-black "></div>
         {/* <div className="z-20 right-10 bottom-1 lg:right-14 lg:bottom-10 h-5 absolute text-black text-xs px-2">
           {frameInfo.width} : {frameInfo.height} / {frameInfo.fps || 0} fps
         </div> */}
-        <div className=" lg:flex z-10 right-5 bottom-7 lg:right-7 lg:bottom-9 w-full h-[2px] absolute bg-white "></div>
+        <div className=" lg:flex z-10 right-5 bottom-7 lg:right-7 lg:bottom-9 w-full h-[1px] absolute bg-white "></div>
       </div>
     </div>
   );
