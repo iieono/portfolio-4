@@ -38,7 +38,7 @@ function Left({ nav, toggleNav, setNav }) {
       .to(text1Ref.current, {
         duration: 0.3,
         x: 0,
-        color: "white",
+        color: "var(--stroke-main)",
 
         // textShadow:
         //   "2px 0 0 var(--bg-main), 4px 0 0 var(--bg-main), 6px 0 0 var(--bg-main), 8px 0 0 var(--bg-main), 10px 0 0 var(--bg-main)",
@@ -205,7 +205,7 @@ function Left({ nav, toggleNav, setNav }) {
         ></div>
         <div></div>
         <div className="flex  flex-col items-end uppercase pr-4 select-none overflow-visible jetbrains heroo  font-light">
-          <h1 ref={text1Ref} className="hero-1 text-[2rem] overflow-visible">
+          <h1 ref={text1Ref} className="hero-1 text-[2rem]  overflow-visible">
             DIGITAL
           </h1>
           <h1
@@ -222,7 +222,7 @@ function Left({ nav, toggleNav, setNav }) {
         </div>
       </div>
       <div
-        data-comp="nav-16"
+        data-comp="nav-2"
         className="component group nav flex flex-col justify-end lg:justify-between"
       >
         <div className="hidden lg:flex z-20 right-0 top-0 h-7 w-7 opacity-40 group-hover:opacity-0 duration-500 absolute bg-white"></div>
