@@ -130,18 +130,18 @@ function Home() {
           duration: 1,
           ease: "power4.out",
         })
-        .fromTo(
-          textRef.current,
-          {
-            y: "20%",
-          },
-          {
-            y: "-120%",
-            duration: 5,
-            ease: "linear",
-          },
-          "-=0.5"
-        )
+        // .fromTo(
+        //   textRef.current,
+        //   {
+        //     y: "20%",
+        //   },
+        //   {
+        //     y: "-120%",
+        //     duration: 5,
+        //     ease: "linear",
+        //   },
+        //   "-=0.5"
+        // )
         .to(
           glitchRef.current,
           {
@@ -149,7 +149,7 @@ function Home() {
             duration: 0.05,
             yoyo: true,
             repeat: 6,
-            delay: 1,
+            delay: 3,
             onComplete: () => {
               gsap.to(glitchRef.current, {
                 background: "#fecaca",
