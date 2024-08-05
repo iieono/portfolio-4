@@ -221,14 +221,14 @@ function Home() {
           <p>iieo</p>
         </div>
         {/* <div className=" h-6 lg:hidden absolute w-full text-xl flex justify-end items-center bg-black left-0 bottom-8 text-end -z-20 "></div> */}
-        <div className=" h-full w-content flex flex-col items-end justify-end p-2 py-4 text-black text-3xl jetbrains font-light leading-tight lg:hidden">
+        <div className=" h-full w-content flex flex-col items-end justify-end p-2 py-4 text-black text-6xl jetbrains font-light leading-tight lg:hidden">
           {/* <div
             ref={nameRef}
             className="lg:hidden text-sm  w-min h-5 bg-black text-white px-2 text-center items-center kode-mono"
           >
             <p>iieo</p>
           </div> */}
-          <p className="text-end">
+          <p className="">
             DIGITAL <br /> ARCHITECT
           </p>
           {/* <div className="flex px-1 justify-between">
@@ -252,7 +252,7 @@ function Home() {
           ref={gridRef}
           class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className=" p-3 text-xs lg:text-sm 2xl:text-base font-light w-full  jetbrains overflow-visible">
+        <div className=" p-3 text-base font-light w-full  jetbrains overflow-visible">
           <p ref={parRef} class="para  overflow-visible z-40">
             <span>Hi! </span>
             {/* <br className="black lg:hidden" /> */}
