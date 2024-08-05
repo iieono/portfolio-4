@@ -203,10 +203,10 @@ function Left({ nav, toggleNav, setNav }) {
         ></div>
         <div></div>
         <div className="flex  flex-col items-end uppercase pr-4  overflow-visible unbounded heroo  font-light">
-          <h1 ref={text1Ref} className="hero-1 text-[4.6rem]  overflow-visible">
+          <h1 ref={text1Ref} className="hero-1 text-6xl   overflow-visible">
             DIGITAL
           </h1>
-          <h1 ref={text2Ref} className="hero-1 text-[4.6rem]  overflow-visible">
+          <h1 ref={text2Ref} className="hero-1 text-6xl  overflow-visible">
             ARCHITECT
           </h1>
           {/* <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
