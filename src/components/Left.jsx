@@ -201,10 +201,10 @@ function Left({ nav, toggleNav, setNav }) {
         <div className="hidden lg:flex right-0 bottom-7 duration-1000 w-7 h-[1px] absolute bg-white z-20 "></div>
         <div
           ref={gridRef}
-          class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_80%_at_0%_0%,#000_70%,transparent_110%)]"
+          class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_0%_0%,#000_70%,transparent_110%)]"
         ></div>
         <div></div>
-        <div className="flex  flex-col items-end uppercase pr-4  overflow-visible jetbrains heroo  font-light">
+        <div className="flex  flex-col items-end uppercase pr-4 select-none overflow-visible jetbrains heroo  font-light">
           <h1 ref={text1Ref} className="hero-1 text-[2rem] overflow-visible">
             DIGITAL
           </h1>
@@ -232,7 +232,7 @@ function Left({ nav, toggleNav, setNav }) {
         <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black "></div> */}
         <div
           ref={bgNavRef}
-          className=" font-bold hidden lg:inline-block absolute bottom-0 overflow-visible tracking-none text-[var(--bg-main)] opacity-10 select-none lg:text-[10rem] leading-none"
+          className=" font-bold hidden blur lg:inline-block absolute bottom-0 overflow-visible tracking-none text-[var(--bg-main)] opacity-20 select-none lg:text-[10rem] leading-none"
         >
           {location.pathname.slice(1) || "home"}
         </div>

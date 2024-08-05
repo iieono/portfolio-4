@@ -34,7 +34,7 @@ function App() {
     if (location.pathname === "/") {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 3000);
+      }, 2500);
       return () => clearTimeout(timer);
     } else {
       setLoading(false);
@@ -139,10 +139,10 @@ function Loading() {
 
   return (
     <div className="h-screen w-screen bg-black flex gap-2 flex-col p-2 kode-mono text-white text-4xl">
-      <div className="flex items-center gap-2">
+      {/* <div className="flex items-center gap-2">
         <div className="text-sm py-2">{breadText}</div>
         <img ref={breadRef} src="/ico.png" className="h-6 w-6" />
-      </div>
+      </div> */}
       <div className="text-sm border-t py-4 text-yellow-500 flex gap-2">
         <p className="text-white">{loadingText}</p>
         {showHome && (
