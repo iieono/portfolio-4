@@ -27,8 +27,9 @@ function Left({ nav, toggleNav, setNav }) {
     tlText1
       .to(text1Ref.current, {
         duration: 0.3,
-        x: -10,
+        x: -2,
         filter: "blur(4px)",
+        // fontSize: "2rem",
         ease: "power1.inOut",
       }) // Slight move animation
       .call(() => {
@@ -38,6 +39,7 @@ function Left({ nav, toggleNav, setNav }) {
         duration: 0.3,
         x: 0,
         color: "white",
+
         // textShadow:
         //   "2px 0 0 var(--bg-main), 4px 0 0 var(--bg-main), 6px 0 0 var(--bg-main), 8px 0 0 var(--bg-main), 10px 0 0 var(--bg-main)",
         filter: "blur(0px)",
@@ -48,7 +50,7 @@ function Left({ nav, toggleNav, setNav }) {
     tlText2
       .to(text2Ref.current, {
         duration: 0.3,
-        x: -10,
+        x: -2,
         filter: "blur(4px)",
         ease: "power1.inOut",
       }) // Slight move animation
@@ -202,11 +204,14 @@ function Left({ nav, toggleNav, setNav }) {
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_80%_at_0%_0%,#000_70%,transparent_110%)]"
         ></div>
         <div></div>
-        <div className="flex  flex-col items-end uppercase pr-4  overflow-visible unbounded heroo  font-light">
-          <h1 ref={text1Ref} className="hero-1 text-6xl   overflow-visible">
+        <div className="flex  flex-col items-end uppercase pr-4  overflow-visible jetbrains heroo  font-light">
+          <h1 ref={text1Ref} className="hero-1 text-[2rem] overflow-visible">
             DIGITAL
           </h1>
-          <h1 ref={text2Ref} className="hero-1 text-6xl  overflow-visible">
+          <h1
+            ref={text2Ref}
+            className="hero-1 text-[2.24rem]  overflow-visible"
+          >
             ARCHITECT
           </h1>
           {/* <div className="h-10 absolute w-full text-base flex justify-end items-center bg-white right-0 bottom-8 text-end -z-20 ">
@@ -227,7 +232,7 @@ function Left({ nav, toggleNav, setNav }) {
         <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black "></div> */}
         <div
           ref={bgNavRef}
-          className=" font-bold hidden lg:inline-block absolute bottom-[-20%] overflow-visible tracking-none text-[var(--bg-main)] opacity-5 select-none lg:text-[20rem] leading-none"
+          className=" font-bold hidden lg:inline-block absolute bottom-0 overflow-visible tracking-none text-[var(--bg-main)] opacity-10 select-none lg:text-[10rem] leading-none"
         >
           {location.pathname.slice(1) || "home"}
         </div>

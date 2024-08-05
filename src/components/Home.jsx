@@ -67,10 +67,10 @@ function Home() {
       { opacity: 0 },
       {
         opacity: 1,
-        duration: 2,
+        duration: 1.4,
         stagger: 0.3,
         ease: "power2.out",
-        delay: 2,
+        delay: 1,
       }
     );
     gsap.from(gridRef.current, {
@@ -221,14 +221,16 @@ function Home() {
           <p>iieo</p>
         </div>
         {/* <div className=" h-6 lg:hidden absolute w-full text-xl flex justify-end items-center bg-black left-0 bottom-8 text-end -z-20 "></div> */}
-        <div className="unbounded h-full w-content flex flex-col justify-end p-2 py-4 text-black text-5xl font-light leading-tight lg:hidden">
+        <div className=" h-full w-content flex flex-col items-end justify-end p-2 py-4 text-black text-3xl jetbrains font-light leading-tight lg:hidden">
           {/* <div
             ref={nameRef}
             className="lg:hidden text-sm  w-min h-5 bg-black text-white px-2 text-center items-center kode-mono"
           >
             <p>iieo</p>
           </div> */}
-          <p className="">DIGITAL ARCHITECT</p>
+          <p className="text-end">
+            DIGITAL <br /> ARCHITECT
+          </p>
           {/* <div className="flex px-1 justify-between">
             <div className="text-sm w-1/4 flex items-center justify-center">
               <div className="w-full bg-black h-3"></div>
@@ -250,20 +252,21 @@ function Home() {
           ref={gridRef}
           class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className=" p-3 text-2xl xl:text-2xl 2xl:text-3xl font-light w-full caveat overflow-visible">
-          <p ref={parRef} class="para overflow-visible z-40">
-            <span>Hello there! </span>
-            {/* <br /> */}
+        <div className=" p-3 text-xs lg:text-sm 2xl:text-base font-light w-full  jetbrains overflow-visible">
+          <p ref={parRef} class="para  overflow-visible z-40">
+            <span>Hi! </span>
+            {/* <br className="black lg:hidden" /> */}
             <span>I'm </span>
 
             <span className="highlight">
-              <Link to="/about">
-                A. Akhmadjonov. <br />
-              </Link>
+              <Link to="/about">A. Akhmadjonov.</Link>
             </span>
+            <br />
             <span className="">I craft immersive </span>
-            <span className="">digital solutions that inspire. </span>
-            <br className="hidden lg:block" />
+            <span className="">
+              digital <br /> solutions that inspire.
+            </span>
+            <br className="" />
             <span className="highlight">
               <Link to="/portfolio">See my works </Link>
             </span>
@@ -271,6 +274,8 @@ function Home() {
             <span className="highlight">
               <Link to="/contact">reach out.</Link>
             </span>
+            <br />
+            <span className="text-base lg:text-xl arrow-hero">{"->"}</span>
           </p>
         </div>
         <div
@@ -315,8 +320,7 @@ function Home() {
             {/* <p className="  group-hover:pl-4 kode-mono transition-all duration-500">{`->`}</p> */}
           </div>
         </div>
-        <div className="absolute kode-mono text-white opacity-20 bottom-0 -left-[20%] sm:-left-[10%] text-[17rem] leading-none">{`->`}</div>
-        <div className="absolute kode-mono text-white opacity-20 top-0 -right-[20%] sm:-right-[10%] text-[17rem] leading-none">{`<-`}</div>
+
         {/* <div className="hidden lg:flex z-20 left-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
         {/* <div className="hidden lg:flex z-20 right-5 top-5 h-5 w-5 absolute bg-black  shadow-lg shadow-black"></div> */}
         <div className=" lg:flex z-20 right-5 bottom-5 lg:right-5 lg:bottom-7 h-5 w-5 absolute bg-black "></div>

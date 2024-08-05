@@ -6,8 +6,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 .yatra {
   font-family: "Yatra One", system-ui;
+}
+.jetbrains {
+  font-family: "JetBrains Mono", monospace;
 }
 .caveat {
   font-family: "Caveat", cursive;
@@ -126,7 +130,7 @@
   @apply absolute top-5 right-5 text-white text-lg kode-mono block;
 }
 .nav-container {
-  @apply text-[3.5rem] leading-none lg:text-base 2xl:text-xl cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;
+  @apply text-[3.5rem] leading-none lg:text-base cursor-pointer text-red-200 lg:text-black p-8 lg:p-2;
 }
 .nav-container:hover .nav-item:not(:hover) {
   filter: blur(2px);
@@ -680,16 +684,44 @@
 }
 .stuff:hover .highlight {
   color: white;
+  background-color: black;
+  padding: 2px 5px;
+  border-radius: 2px;
+  transform: scale(1.3);
 }
 .highlight {
-  @apply text-white lg:text-black;
+  @apply text-white lg:text-black relative;
 }
-.para span {
+.stuff:hover .highlight::before {
+  content: "-> ";
+  display: inline-block; /* Ensure it's inline-block to handle transformations */
+  width: max-content;
+  border-radius: 2px;
+  margin-right: 6px;
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transform instead of width */
+}
+
+.stuff:hover .highlight:hover::before {
+  /* content: "-> "; */
+  transform: rotate(-45deg);
+}
+.para span:not(.arrow-hero) {
   @apply duration-300 cursor-default;
 }
-.stuff:hover span:not(.highlight) {
+.stuff:hover span:not(.highlight):not(.arrow-hero) {
   /* color: white; */
   filter: blur(2px);
+}
+.arrow-hero {
+  transition: filter 1s ease, transform 0.6s ease;
+  display: inline-block;
+  cursor: default;
+}
+.stuff:hover .arrow-hero {
+  transform: translateX(-100%) rotateZ(-45deg);
+  opacity: 0;
+  filter: blur(10px);
 }
 /* .stroke-pic {
   text-shadow: 2px 0 0 var(--bg-main), 4px 0 0 var(--bg-main),
