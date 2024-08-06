@@ -202,8 +202,8 @@ function Home() {
         data-comp={`idk-${String(idkCounter).padStart(2, "0")}`}
         className="component top text-red-200"
       >
-        <div className=" lines-bg hidden lg:flex left-7 top-0 duration-1000 h-full group-hover:h-1/2 w-[1px] absolute bg-white "></div>
-        <div className=" lines-bg hidden lg:flex right-0 bottom-7 duration-1000 w-full group-hover:w-1/2 h-[1px] absolute bg-white "></div>
+        {/* <div className=" lines-bg hidden lg:flex left-7 top-0 duration-1000 h-full group-hover:h-1/2 w-[1px] absolute bg-white "></div>
+        <div className=" lines-bg hidden lg:flex right-0 bottom-7 duration-1000 w-full group-hover:w-1/2 h-[1px] absolute bg-white "></div> */}
         <div class=" lg:hidden absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_100%_100%_at_0%_0%,#000_70%,transparent_110%)]"></div>
         <div
           className="h-max absolute text-xs select-none"
@@ -246,8 +246,8 @@ function Home() {
         </div>
       </div>
       <div ref={stuffRef} data-comp="her-3" className="component group stuff">
-        <div className="hidden lg:flex left-7 top-0 duration-1000 h-7 w-[1px]  absolute bg-white "></div>
-        <div className="hidden lg:flex left-0 top-7 duration-1000 w-7 h-[1px]  absolute bg-white "></div>
+        {/* <div className="hidden lg:flex left-7 top-0 duration-1000 h-7 w-[1px]  absolute bg-white "></div> */}
+        {/* <div className="hidden lg:flex left-0 top-7 duration-1000 w-1/2 xl:w-1/3 h-[1px]  absolute bg-white "></div> */}
         <div
           ref={gridRef}
           class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"

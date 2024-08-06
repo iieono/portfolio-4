@@ -26,9 +26,8 @@ const FallingLeaves = () => {
 
   const addLeaf = useCallback((x) => {
     const now = Date.now();
-    if (now - lastAddTimeRef.current > 200) {
-      // Increased time interval to reduce leaf creation rate
-      // Add a new leaf every 500ms at most
+    if (now - lastAddTimeRef.current > 300) {
+      // Add a new leaf every 200ms at most
       const newLeaf = {
         id: now,
         x,
@@ -36,10 +35,10 @@ const FallingLeaves = () => {
         leafType: Math.floor(Math.random() * 3) + 1,
         rotation: Math.random() * 360,
         parameters: {
-          swayFrequency: 0.2 + Math.random() * 0.8, // Slower sway frequency
-          swayAmplitude: 30 + Math.random() * 70, // Reduced sway amplitude
-          fallSpeed: 0.1 + Math.random() * 0.5, // Slower fall speed
-          rotationSpeed: Math.random() * 0.5 - 0.25, // Slower rotation speed
+          swayFrequency: 0.5 + Math.random() * 1.5,
+          swayAmplitude: 50 + Math.random() * 100,
+          fallSpeed: 0.5 + Math.random() * 1.5,
+          rotationSpeed: Math.random() * 2 - 1,
         },
       };
       setLeaves((prevLeaves) => [...prevLeaves, newLeaf]);
@@ -71,7 +70,7 @@ const FallingLeaves = () => {
           prevLeaves
             .map((leaf) => {
               const now = Date.now();
-              const timeElapsed = (now - leaf.id) / 600; // in seconds
+              const timeElapsed = (now - leaf.id) / 1000; // in seconds
 
               return {
                 ...leaf,
