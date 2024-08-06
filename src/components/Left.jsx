@@ -204,7 +204,7 @@ function Left({ nav, toggleNav, setNav }) {
           class=" absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_0%_0%,#000_70%,transparent_110%)]"
         ></div>
         <div></div>
-        <div className="flex  flex-col items-end uppercase pr-4 select-none overflow-visible yatra heroo  font-light">
+        <div className="flex  flex-col items-end uppercase pr-4 select-none overflow-visible raleway heroo  font-light">
           <h1 ref={text1Ref} className="hero-1 text-[2.7rem]  overflow-visible">
             DIGITAL
           </h1>
