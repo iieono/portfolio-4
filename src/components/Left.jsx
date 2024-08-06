@@ -205,7 +205,7 @@ function Left({ nav, toggleNav, setNav }) {
         ></div>
         <div></div>
         <div className="flex  flex-col items-end uppercase pr-4 select-none overflow-visible raleway heroo  font-light">
-          <h1 ref={text1Ref} className="hero-1 text-[2.7rem]  overflow-visible">
+          <h1 ref={text1Ref} className="hero-1 text-[2.8rem]  overflow-visible">
             DIGITAL
           </h1>
           <h1 ref={text2Ref} className="hero-1 text-[2.8rem]  overflow-visible">
