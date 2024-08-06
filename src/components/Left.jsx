@@ -4,6 +4,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import FallingLeaves from "./FallingLeaves";
 
 gsap.registerPlugin(CSSRulePlugin);
 
@@ -197,6 +198,7 @@ function Left({ nav, toggleNav, setNav }) {
         <p className="overflow-visible select-none">iieo</p>
       </div>
       <div data-comp="her-0" className="component top nav-not justify-between">
+        {/* <FallingLeaves /> */}
         <div className="hidden lg:flex right-7 bottom-0 duration-1000 h-7 w-[1px] absolute bg-white z-20 "></div>
         <div className="hidden lg:flex right-0 bottom-7 duration-1000 w-7 h-[1px] absolute bg-white z-20 "></div>
         <div

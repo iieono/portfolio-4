@@ -4,6 +4,7 @@ import Left from "./Left";
 import { SlArrowLeft } from "react-icons/sl";
 import { Outlet } from "react-router-dom";
 import AnimatedCat from "./Cat";
+import FallingLeaves from "./FallingLeaves";
 
 function Layout() {
   const [nav, setNav] = useState(false);
@@ -21,6 +22,7 @@ function Layout() {
           <SlArrowLeft />
         </div>
       )}
+      <FallingLeaves />
     </div>
   );
 }

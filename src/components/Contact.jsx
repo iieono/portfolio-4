@@ -11,7 +11,7 @@ function Contact() {
     gsap.to(rightRef.current, {
       y: 0,
       ease: "power4.out",
-      duration: 1,
+      duration: 2,
       delay: 0.5,
     });
   });
