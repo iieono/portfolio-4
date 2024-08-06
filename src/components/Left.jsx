@@ -114,7 +114,7 @@ function Left({ nav, toggleNav, setNav }) {
     gsap.to(leftRef.current, {
       y: 0,
       ease: "power4.out",
-      duration: 1,
+      duration: 2,
     });
     gsap.from(lineRef.current, {
       opacity: 0,

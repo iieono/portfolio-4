@@ -59,7 +59,7 @@ function Home() {
     gsap.to(rightRef.current, {
       y: 0,
       ease: "power4.out",
-      duration: 1,
+      duration: 1.5,
       delay: 0.5,
     });
     gsap.fromTo(
@@ -67,8 +67,8 @@ function Home() {
       { opacity: 0 },
       {
         opacity: 1,
-        duration: 1.4,
-        stagger: 0.3,
+        duration: 0.8,
+        stagger: 0.2,
         ease: "power2.out",
         delay: 1,
       }
@@ -252,20 +252,26 @@ function Home() {
           ref={gridRef}
           class=" absolute hidden bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:10rem_10rem] [mask-image:radial-gradient(ellipse_100%_100%_at_100%_80%,#000_70%,transparent_110%)]"
         ></div>
-        <div className=" p-3 text-base font-light w-full  jetbrains overflow-visible">
+        <div className=" p-3 text-lg lg:text-base font-light w-full  jetbrains overflow-visible">
           <p ref={parRef} class="para  overflow-visible z-40">
             <span>Hi! </span>
-            {/* <br className="black lg:hidden" /> */}
             <span>I'm </span>
 
             <span className="highlight">
-              <Link to="/about">A. Akhmadjonov.</Link>
+              <Link to="/about" className="name-change" data-text="iieo">
+                A. Akhmadjonov.
+              </Link>
             </span>
             <br />
-            <span className="">I craft immersive </span>
+            <span className="">I </span>
+            <span className="">craft </span>
+            <span className="">immersive </span>
             <span className="">
-              digital <br /> solutions that inspire.
+              digital <br />
             </span>
+            <span className="">solutions </span>
+            <span className="">that </span>
+            <span className="">inspire.</span>
             <br className="" />
             <span className="highlight">
               <Link to="/portfolio">See my works </Link>
