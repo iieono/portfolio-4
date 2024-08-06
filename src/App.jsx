@@ -9,6 +9,7 @@ import { Link, Route, Routes, useLocation } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import FallingLeaves from "./components/FallingLeaves";
 
 function App() {
   const location = useLocation();
@@ -72,7 +73,7 @@ function App() {
   // if (loading && location.pathname === "/") return <Loading />;
 
   return (
-    <div className="app  p-0 lg:p-[var(--gap-main)]">
+    <div className="app p-0 lg:p-[var(--gap-main)]">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -82,6 +83,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <FallingLeaves />
     </div>
   );
 }

@@ -91,7 +91,7 @@ function Home() {
       });
     }
     // Create a timeline for other animations
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0, paused: true });
 
     if (window.innerWidth > 1024) {
       // Add animations to the timeline

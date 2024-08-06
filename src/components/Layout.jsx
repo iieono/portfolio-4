@@ -22,7 +22,6 @@ function Layout() {
           <SlArrowLeft />
         </div>
       )}
-      <FallingLeaves />
     </div>
   );
 }

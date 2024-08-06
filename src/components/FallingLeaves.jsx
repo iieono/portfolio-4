@@ -1,41 +1,14 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 
-const TeaLeaf = ({ x, leafType }) => {
-  const [position, setPosition] = useState({ x, y: -100 });
-  const [rotation, setRotation] = useState(Math.random() * 360);
-  const [parameters] = useState({
-    swayFrequency: 0.5 + Math.random() * 1.5,
-    swayAmplitude: 50 + Math.random() * 100,
-    fallSpeed: 0.5 + Math.random() * 1.5,
-    rotationSpeed: Math.random() * 2 - 1,
-  });
-
-  useEffect(() => {
-    const fallAnimation = setInterval(() => {
-      setPosition((prev) => ({
-        x:
-          prev.x +
-          (Math.sin((Date.now() / 1000) * parameters.swayFrequency) *
-            parameters.swayAmplitude) /
-            100,
-        y: prev.y + parameters.fallSpeed,
-      }));
-      setRotation((prev) => prev + parameters.rotationSpeed);
-    }, 16); // ~60fps
-
-    return () => clearInterval(fallAnimation);
-  }, [parameters]);
-
-  if (position.y > window.innerHeight) return null;
-
+const TeaLeaf = ({ x, y, leafType, rotation }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
       style={{
         position: "absolute",
-        left: `${position.x}px`,
-        top: `${position.y}px`,
+        left: `${x}px`,
+        top: `${y}px`,
         width: "60px",
         height: "60px",
         transform: `rotate(${rotation}deg)`,
@@ -49,33 +22,78 @@ const TeaLeaf = ({ x, leafType }) => {
 
 const FallingLeaves = () => {
   const [leaves, setLeaves] = useState([]);
-  const [lastAddTime, setLastAddTime] = useState(0);
+  const lastAddTimeRef = useRef(0);
 
-  const addLeaf = useCallback(
-    (x) => {
-      const now = Date.now();
-      if (now - lastAddTime > 100) {
-        // Add a new leaf every 100ms at most
-        const newLeaf = {
-          id: now,
-          x,
-          leafType: Math.floor(Math.random() * 3) + 1,
-        };
-        setLeaves((prevLeaves) => [...prevLeaves, newLeaf]);
-        setLastAddTime(now);
-      }
+  const addLeaf = useCallback((x) => {
+    const now = Date.now();
+    if (now - lastAddTimeRef.current > 200) {
+      // Increased time interval to reduce leaf creation rate
+      // Add a new leaf every 500ms at most
+      const newLeaf = {
+        id: now,
+        x,
+        y: -100, // Start position off-screen
+        leafType: Math.floor(Math.random() * 3) + 1,
+        rotation: Math.random() * 360,
+        parameters: {
+          swayFrequency: 0.2 + Math.random() * 0.8, // Slower sway frequency
+          swayAmplitude: 30 + Math.random() * 70, // Reduced sway amplitude
+          fallSpeed: 0.1 + Math.random() * 0.5, // Slower fall speed
+          rotationSpeed: Math.random() * 0.5 - 0.25, // Slower rotation speed
+        },
+      };
+      setLeaves((prevLeaves) => [...prevLeaves, newLeaf]);
+      lastAddTimeRef.current = now;
+    }
+  }, []);
+
+  const handleMouseMove = useCallback(
+    (e) => {
+      addLeaf(e.clientX);
     },
-    [lastAddTime]
+    [addLeaf]
   );
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      addLeaf(e.clientX);
+    const throttledMouseMove = (e) => {
+      requestAnimationFrame(() => handleMouseMove(e));
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [addLeaf]);
+    window.addEventListener("mousemove", throttledMouseMove);
+    return () => window.removeEventListener("mousemove", throttledMouseMove);
+  }, [handleMouseMove]);
+
+  // Animation function to update leaf positions
+  useEffect(() => {
+    const updateLeaves = () => {
+      setLeaves(
+        (prevLeaves) =>
+          prevLeaves
+            .map((leaf) => {
+              const now = Date.now();
+              const timeElapsed = (now - leaf.id) / 600; // in seconds
+
+              return {
+                ...leaf,
+                y: leaf.y + leaf.parameters.fallSpeed,
+                x:
+                  leaf.x +
+                  (Math.sin(timeElapsed * leaf.parameters.swayFrequency) *
+                    leaf.parameters.swayAmplitude) /
+                    100,
+                rotation: leaf.rotation + leaf.parameters.rotationSpeed,
+              };
+            })
+            .filter((leaf) => leaf.y < window.innerHeight) // Keep only leaves within the viewport
+      );
+
+      requestAnimationFrame(updateLeaves);
+    };
+
+    updateLeaves(); // Start the animation loop
+
+    return () => cancelAnimationFrame(updateLeaves);
+  }, []);
 
   return (
     <div
@@ -120,7 +138,13 @@ const FallingLeaves = () => {
         </defs>
       </svg>
       {leaves.map((leaf) => (
-        <TeaLeaf key={leaf.id} x={leaf.x} leafType={leaf.leafType} />
+        <TeaLeaf
+          key={leaf.id}
+          x={leaf.x}
+          y={leaf.y}
+          leafType={leaf.leafType}
+          rotation={leaf.rotation}
+        />
       ))}
     </div>
   );

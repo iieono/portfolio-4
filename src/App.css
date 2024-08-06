@@ -68,6 +68,7 @@
 }
 .app {
   height: var(--doc-height);
+  perspective: 1000px;
 
   background-color: var(--bg-main);
   transition: background-color 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -77,6 +78,8 @@
 }
 
 .layout {
+  transform-origin: center bottom;
+  /* transform: rotateX(3deg); */
 }
 .layout {
   @apply flex gap-0 lg:gap-[var(--gap-main)];
