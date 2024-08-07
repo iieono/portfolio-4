@@ -229,7 +229,7 @@ function Home() {
             <p>iieo</p>
           </div> */}
           <p className="text-start text-white w-full">
-            DESIGNER <span className="text-lg">&</span>
+            DESIGNER <span className="text-base">&</span>
           </p>
           <p className="w-full text-end">DEVELOPER</p>
           {/* <div className="flex px-1 justify-between">
