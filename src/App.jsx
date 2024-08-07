@@ -70,7 +70,7 @@ function App() {
     document.documentElement.style.setProperty("--stroke-main", strokeColor);
   }, [location.pathname]);
 
-  if (loading && location.pathname === "/") return <Loading />;
+  // if (loading && location.pathname === "/") return <Loading />;
 
   return (
     <div className="app p-0 lg:p-[var(--gap-main)]">
