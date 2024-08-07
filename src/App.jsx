@@ -70,7 +70,7 @@ function App() {
     document.documentElement.style.setProperty("--stroke-main", strokeColor);
   }, [location.pathname]);
 
-  // if (loading && location.pathname === "/") return <Loading />;
+  if (loading && location.pathname === "/") return <Loading />;
 
   return (
     <div className="app p-0 lg:p-[var(--gap-main)]">
@@ -145,7 +145,7 @@ function Loading() {
         <div className="text-sm py-2">{breadText}</div>
         <img ref={breadRef} src="/ico.png" className="h-6 w-6" />
       </div> */}
-      <div className="text-sm border-t py-4 text-yellow-500 flex gap-2">
+      <div className="text-sm py-4 text-yellow-500 flex gap-2">
         <p className="text-white">{loadingText}</p>
         {showHome && (
           <Link to="/" className="">
