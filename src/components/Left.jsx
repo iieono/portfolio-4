@@ -229,7 +229,7 @@ function Left({ nav, toggleNav, setNav }) {
         <div className="hidden lg:flex z-20 right-5 bottom-7 h-5 w-5 absolute bg-black "></div> */}
         <div
           ref={bgNavRef}
-          className=" font-bold hidden blur lg:inline-block absolute bottom-0 overflow-visible tracking-none text-[var(--bg-main)] opacity-20 select-none lg:text-[10rem] leading-none"
+          className=" font-bold hidden blur lg:inline-block absolute bottom-0 overflow-visible tracking-none text-[var(--bg-main)] opacity-10 select-none lg:text-[10rem] leading-none"
         >
           {location.pathname.slice(1) || "home"}
         </div>

@@ -228,9 +228,10 @@ function Home() {
           >
             <p>iieo</p>
           </div> */}
-          <p className="">
-            <span className="text-white">DESIGNER &</span> <br /> DEVELOPER
+          <p className="text-start text-white w-full">
+            DESIGNER <span className="text-lg">&</span>
           </p>
+          <p className="w-full text-end">DEVELOPER</p>
           {/* <div className="flex px-1 justify-between">
             <div className="text-sm w-1/4 flex items-center justify-center">
               <div className="w-full bg-black h-3"></div>
